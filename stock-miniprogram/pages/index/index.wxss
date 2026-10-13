@@ -1,0 +1,14 @@
+.search { display: flex; align-items: center; }
+.search-input { flex: 1; height: 72rpx; padding: 0 20rpx; background: #f5f6f8; border-radius: 12rpx; }
+.search-btn { margin-left: 16rpx; }
+.section-title { font-weight: 600; margin-bottom: 16rpx; }
+.result-row, .row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20rpx 0; border-bottom: 1rpx solid #eef0f3;
+}
+.row:last-of-type, .result-row:last-child { border-bottom: none; }
+.name { font-size: 30rpx; }
+.right { text-align: right; }
+.price { font-size: 34rpx; font-weight: 600; }
+.change { font-size: 24rpx; }
+.footer { margin-top: 16rpx; text-align: center; }

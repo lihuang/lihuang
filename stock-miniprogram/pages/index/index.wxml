@@ -1,0 +1,36 @@
+<view class="search card">
+  <input class="search-input" placeholder="输入股票名称 / 代码 / 拼音，如 茅台、00700、AAPL"
+         value="{{keyword}}" confirm-type="search"
+         bindinput="onInput" bindconfirm="onSearch" />
+  <button class="search-btn" size="mini" type="primary" bindtap="onSearch">查询</button>
+</view>
+
+<view wx:if="{{results.length}}" class="card">
+  <view class="section-title">搜索结果</view>
+  <view wx:for="{{results}}" wx:key="code" class="result-row"
+        data-code="{{item.code}}" data-name="{{item.name}}" bindtap="openDetail">
+    <text class="name">{{item.name}}</text>
+    <text class="muted">{{item.code}}</text>
+  </view>
+</view>
+<view wx:elif="{{searched}}" class="card muted">未找到匹配的股票</view>
+
+<view class="card">
+  <view class="section-title">
+    自选 <text class="muted">（下拉刷新，长按删除）</text>
+  </view>
+  <view wx:if="{{!list.length}}" class="muted">暂无自选，搜索后点开详情即可添加</view>
+  <view wx:for="{{list}}" wx:key="code" class="row"
+        data-code="{{item.code}}" data-name="{{item.name}}"
+        bindtap="openDetail" bindlongpress="onRemove">
+    <view class="left">
+      <view class="name">{{item.name}}</view>
+      <view class="muted">{{item.code}} · 市值 {{item.marketCapText}}</view>
+    </view>
+    <view class="right">
+      <view class="price {{item.trend}}">{{item.priceText}}</view>
+      <view class="change {{item.trend}}">{{item.changeText}}</view>
+    </view>
+  </view>
+  <view wx:if="{{updatedAt}}" class="muted footer">更新于 {{updatedAt}}</view>
+</view>
