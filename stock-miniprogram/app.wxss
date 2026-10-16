@@ -1,0 +1,17 @@
+page {
+  background: #f5f6f8;
+  color: #1f2329;
+  font-size: 28rpx;
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
+}
+.card {
+  margin: 24rpx;
+  padding: 28rpx;
+  background: #fff;
+  border-radius: 16rpx;
+}
+/* A 股/港股习惯：红涨绿跌 */
+.up { color: #e53935; }
+.down { color: #1a9f5c; }
+.flat { color: #8a8f99; }
+.muted { color: #8a8f99; font-size: 24rpx; }

@@ -1,0 +1,39 @@
+<view wx:if="{{error}}" class="card muted">{{error}}</view>
+
+<block wx:else>
+  <view class="card header">
+    <view class="title">
+      <text class="name">{{name}}</text>
+      <text class="muted code">{{code}}</text>
+    </view>
+    <view class="price {{trend}}">{{priceText}}</view>
+    <view class="change {{trend}}">{{changeText}}</view>
+    <view class="muted">{{time}} · 每 {{refreshSeconds}} 秒自动刷新</view>
+  </view>
+
+  <view class="card cap">
+    <view class="muted">总市值</view>
+    <view class="cap-value">{{marketCapText}}</view>
+  </view>
+
+  <view class="card grid">
+    <view class="cell"><view class="muted">今开</view><view>{{openText}}</view></view>
+    <view class="cell"><view class="muted">昨收</view><view>{{prevCloseText}}</view></view>
+    <view class="cell"><view class="muted">最高</view><view>{{highText}}</view></view>
+    <view class="cell"><view class="muted">最低</view><view>{{lowText}}</view></view>
+  </view>
+
+  <view class="card" wx:if="{{hasChart}}">
+    <view class="muted">近 {{chartDays}} 个交易日收盘价</view>
+    <canvas type="2d" id="chart" class="chart"></canvas>
+    <view class="chart-axis muted">
+      <text>{{chartStart}}</text><text>{{chartEnd}}</text>
+    </view>
+  </view>
+
+  <view class="actions">
+    <button type="{{inWatchlist ? 'default' : 'primary'}}" bindtap="toggleWatch">
+      {{inWatchlist ? '移出自选' : '加入自选'}}
+    </button>
+  </view>
+</block>

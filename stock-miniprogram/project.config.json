@@ -1,0 +1,16 @@
+{
+  "description": "股价与市值查看小程序",
+  "packOptions": { "ignore": [{ "type": "folder", "value": "tests" }] },
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "3.0.0",
+  "appid": "touristappid",
+  "projectname": "stock-miniprogram",
+  "condition": {}
+}
